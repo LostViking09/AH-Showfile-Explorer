@@ -1,3 +1,4 @@
+import directory
 class Directories:
     def __init__(self):
         self.directories = []

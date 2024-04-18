@@ -1,3 +1,4 @@
+import library, scene, show
 class Directory:
     def __init__(self, name, path):
         self.name = name
@@ -9,11 +10,14 @@ class Directory:
     def add_show(self, show):
         self.shows.append(show)
 
-    def add_library(self, library):
-        self.libraries.append(library)
+    def add_library(self, in_library):
+        self.libraries.append(in_library)
 
     def add_scene(self, scene):
         self.scenes.append(scene)
+
+    def set_name(self, name):
+        self.name = name
 
     def __str__(self):
         show_str = "\n".join(str(show) for show in self.shows)
