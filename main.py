@@ -29,7 +29,7 @@ class MainApplication(tk.Tk):
         self.file_menu.add_command(label="Exit", command=self.exit_app)
 
         # Create an "Open - Qu" submenu
-        self.open_qu_menu.add_command(label="Open * folder", command=self.qu_scan_directory)
+        self.open_qu_menu.add_command(label="Open * folder")
         self.open_qu_menu.add_command(label="Open AHQU folder")
         self.open_qu_menu.add_command(label="Open SHOW folder", command=self.open_qu_show)
 
@@ -37,11 +37,6 @@ class MainApplication(tk.Tk):
         self.about_menu = tk.Menu(self.menu_bar)
         self.menu_bar.add_cascade(label="About", menu=self.about_menu)
         self.about_menu.add_command(label="About", command=self.show_about)
-
-    def qu_scan_directory(self):
-        directory_path = filedialog.askdirectory(title="Select a folder containing AHQU data")
-        if directory_path:
-            dir_storage.add_directory(QuReader.scan_folder(directory_path))
 
     def open_qu_show(self):
         folder_path = filedialog.askdirectory(title="Select a SHOW folder")

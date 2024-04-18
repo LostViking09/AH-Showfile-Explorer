@@ -28,6 +28,7 @@ class QuReader:
         return False
 
     @staticmethod
+    @staticmethod
     def read_library(path):
         # Check if the file exists
         if not os.path.exists(path):
