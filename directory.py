@@ -1,8 +1,10 @@
-import library, scene, show
+import os
+
+
 class Directory:
     def __init__(self, name, path):
         self.name = name
-        self.path = path
+        self.path = os.path.normpath(path)
         self.shows = []
         self.libraries = []
         self.scenes = []
