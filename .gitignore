@@ -1,2 +1,7 @@
 /archive/tree_sample.py
 /demofiles/
+/__pycache__/
+/.idea/
+/_internal/
+/build/
+/dist/
