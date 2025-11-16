@@ -1,4 +1,5 @@
 import os
+import sys
 import tkinter as tk
 import shutil
 from tkinter import messagebox
@@ -10,6 +11,16 @@ from sqreader import SQReader
 from PIL import ImageTk, Image
 
 dir_storage = Directories()
+
+
+def resource_path(relative_path):
+    """Get absolute path to resource, works for dev and for PyInstaller"""
+    try:
+        # PyInstaller creates a temp folder and stores path in _MEIPASS
+        base_path = sys._MEIPASS
+    except Exception:
+        base_path = os.path.abspath(".")
+    return os.path.join(base_path, relative_path)
 
 
 class MainApplication(tk.Tk):
@@ -63,10 +74,10 @@ class MainApplication(tk.Tk):
         self.tree.bind("<Button-3>", self.show_context_menu)
 
         # Add icons to different types of items
-        self.folder_icon = ImageTk.PhotoImage(self.image_pad("icons/folder.png"))
-        self.show_icon = ImageTk.PhotoImage(self.image_pad("icons/show.png"))
-        self.scene_icon = ImageTk.PhotoImage(self.image_pad("icons/scene.png"))
-        self.library_icon = ImageTk.PhotoImage(self.image_pad("icons/library.png"))
+        self.folder_icon = ImageTk.PhotoImage(self.image_pad(resource_path("icons/folder.png")))
+        self.show_icon = ImageTk.PhotoImage(self.image_pad(resource_path("icons/show.png")))
+        self.scene_icon = ImageTk.PhotoImage(self.image_pad(resource_path("icons/scene.png")))
+        self.library_icon = ImageTk.PhotoImage(self.image_pad(resource_path("icons/library.png")))
 
         self.tree.tag_configure("directory", image=self.folder_icon)
         self.tree.tag_configure("show", image=self.show_icon)
