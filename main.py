@@ -211,7 +211,7 @@ class MainApplication(tk.Tk):
 
     @staticmethod
     def show_about():
-        messagebox.showinfo("About", "Made with love")
+        messagebox.showinfo("About", "Made by:\nBotond Csatári-Szűcs\nU2VC5A")
 
 
 if __name__ == "__main__":
